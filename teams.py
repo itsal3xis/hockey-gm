@@ -1,16 +1,18 @@
-def Teams():
+def teams():
     team_list = ["Montreal", "Boston", "Chicago", "Toronto", "New York", "Detroit"]
 
-    choice = int(input("1: Select a team\n2: Create a team\n3: Select a team concept"))
+    choice = int(input("1: Select and play as a classic team\n2: League Expansion - Create a team\n"
+                       "3: League Expansion - Select a team concept\n>  "))
     while choice > 3:
         print("Choose a valid option")
         choice = int(input(">  "))
     
     if choice == 1:
-        team_choice = int(input("1: Montreal\n2: Boston\n3: Chicago\n4: Toronto\n5: New York\n6: Detroit"))
-        while team_choice > 6:
+        team_choice = int(input("1: Montreal        2: Boston\n3: Chicago         4: Toronto\n"
+                                "5: New York        6: Detroit\n>  "))
+        while team_choice > 6 or team_choice < 1:
             print("Choose a valid option")
-            choice = int(input(">  "))
+            team_choice = int(input(">  "))
 
         if team_choice == 1:
             return "Montreal"
@@ -27,4 +29,9 @@ def Teams():
 
 
 def create_team():
-    pass
+    name = input("Enter the team name\n>  ")
+    city = input("Enter the location of the team\n>  ") #Add verification for no name
+    
+
+
+teams()
